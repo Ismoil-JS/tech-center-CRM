@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+   <div class="container_single">
+    <h2>Hello, student <%= student.username %>! You have a lesson with group <i>"<%= studentGroup.group_name %>"</i> based on <%= courseName.title %>. Your teacher is <%= teacher ? teacher.username : "being searched.."%>.</h2>
+</div>
+   <div class="container_single">
+    <h3>Here is your tasks:</h3>
+    
+    <ul>
+        <% for (let i = 0; i < tasks.length; i++) { %>
+            <li><%= tasks[i].task %></li>
+            <b>Deadline: <%= tasks[i].deadline %></b>
+            <hr>
+        <% } %>
+    </ul>
+   </div>
+   
+   <form class="logout" action="/api/logout" method="post"> <button>Log out</button></form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "group_name": "React N1",
+        "courseID": 2
+    },
+    {
+        "id": 2,
+        "group_name": "Node.js N2",
+        "courseID": 1
+    },
+    {
+        "id": 4,
+        "group_name": "Ember N1",
+        "courseID": 4
+    },
+    {
+        "id": 5,
+        "group_name": "Pyton N1",
+        "courseID": 5
+    }
+]

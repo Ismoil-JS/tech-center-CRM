@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "username": "john",
+        "password": "123456",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "harry",
+        "password": "harrypotter",
+        "role": "student"
+    },
+    {
+        "id": 3,
+        "username": "jane",
+        "password": "123456",
+        "group_ID": 1,
+        "role": "teacher"
+    },
+    {
+        "id": 4,
+        "username": "joe",
+        "password": "123456",
+        "group_ID": 1,
+        "role": "student"
+    },
+    {
+        "id": 5,
+        "username": "Abdulla",
+        "password": "123456",
+        "group_ID": 2,
+        "role": "teacher"
+    },
+    {
+        "id": 6,
+        "username": "Hoshim",
+        "password": "123456",
+        "group_ID": 1,
+        "role": "student"
+    },
+    {
+        "id": 7,
+        "username": "Elbek",
+        "password": "123456",
+        "group_ID": 4,
+        "role": "student"
+    },
+    {
+        "id": 8,
+        "username": "Elon",
+        "password": "123456",
+        "group_ID": 5,
+        "role": "teacher"
+    },
+    {
+        "id": 9,
+        "username": "Musk",
+        "password": "123456",
+        "group_ID": 5,
+        "role": "student"
+    }
+]

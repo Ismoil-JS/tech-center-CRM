@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <div class="container_single admin"><h1>Welcome admin <%= admin.username %>!</h1></div>
+
+   <div class="container_single">
+    <h2>Create a course</h2>
+    
+    <form action="/api/courses" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="title" type="text" placeholder="Enter course title..." autocomplete="off">
+        <button type="submit">Create</button>
+    </form>
+   </div>
+
+   <div class="container_single">
+    <h2>Create a group</h2>
+
+    <form action="/api/groups" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="group_name" type="text" placeholder="Guruh" autocomplete="off">
+        <select name="courseID" id="courseID">
+            <% allCourses.map(course => { %>
+                <option value="<%= course.id %>"><%= course.title %></option>
+                <% }) %>
+        </select>
+        <button type="submit">Create</button>
+    </form>
+   </div>
+
+   <div class="container_single">
+    <h2>Create a teacher</h2>
+
+    <form action="/api/teacher" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="username" type="text" placeholder="Teacher" autocomplete="off">
+        <input name="password" type="text" placeholder="Password" autocomplete="off">
+        <select name="groupID" id="groupID">
+            <% allGroups.map(group => { %>
+                <option value="<%= group.id %>"><%= group.group_name %></option>
+                <% }) %>
+        </select>
+        <button type="submit">Create</button>
+    </form>
+   </div>
+
+    <div class="container_single">
+        <h2>Create a student</h2>
+
+    <form action="/api/student" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="username" type="text" placeholder="Student" autocomplete="off">
+        <input name="password" type="text" placeholder="Password" autocomplete="off">
+        <select name="groupID" id="groupID">
+            <% allGroups.map(group => { %>
+                <option value="<%= group.id %>"><%= group.group_name %></option>
+                <% }) %>
+        </select>
+        <button type="submit">Create</button>
+    </form>
+    </div>
+   <form class="logout" action="/api/logout" method="post"> <button>Log out</button></form>
+</body>
+</html>

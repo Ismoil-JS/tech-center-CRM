@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div class="container_single">
+    <h2>Hello, teacher <%= teacher.username %>! You have a group <i>"<%= teacherGroup.group_name %>"</i> based on <%= courseName.title %></h2>
+</div>
+   
+    <div class="container_single">
+        <h3>Create a task for your students</h3>
+    <form action="/api/tasks" method="post" enctype="application/x-www-form-urlencoded">
+        <input name="task" type="text" placeholder="Create task" autocomplete="off">
+        <input name="deadline" type="date" placeholder="Deadline" autocomplete="off">
+        <input name="group_ID" type="hidden" value="<%= teacher.group_ID %>">
+        <button type="submit">Create</button>
+    </form>
+    </div>
+
+    <div class="container_single">
+        <h3>Students:</h3>
+    <ul>
+        <% teacherStudents.forEach(function(student) { %>
+            <li><%= student.username %></li>
+            <hr>
+        <% }); %>
+    </ul>
+    </div>
+   <form class="logout" action="/api/logout" method="post"> <button>Log out</button></form>
+</body>
+</html>
