@@ -1,17 +1,14 @@
-import { UnprocessableException } from "../errors/unprocessable.exception.js"
-
 export const ValidationMiddleware = schema => {
-    return (req, _, next) => {
+    return (req, res, next) => {
         const { error, value } = schema.validate(req.body)
 
         if (error) {
-            throw new UnprocessableException({
-                message: error.message,
-                details: error.details
-            })
+            return res.status(400).json({ message: error.message })
+        }
+        else {
+            req.body = value
+            next()
         }
 
-        req.body = value
-        next()
     }
 }

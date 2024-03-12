@@ -1,5 +1,4 @@
-export const ErrorHandlerMiddleware = (err, _, res, __) => {
-    console.log(err);
+export const ErrorHandlerMiddleware = (err, req, res, next) => {
     if (err.exception) {
         return res.status(err.status).json({
             message: err.message

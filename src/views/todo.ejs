@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container welcomePage">
+        <h1>My ToDo List</h1>
+    </div>
+
+    <div class="container">
+        <div class="task-container">
+            <h2>Create a Task</h2>
+
+            <form action="/api/task" method="post" enctype="application/x-www-form-urlencoded">
+                <input name="task" type="text" placeholder="Enter Task">
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Tasks to Do</h2>
+        <div class="tasks">
+            <% allTasks.map(task => { %>
+                <div class="task-item" task-id="<%= task.id %>">
+                    <div class="task-details">
+                        <p><%= task.task %></p>
+                        <input type="text" class="edit-input" value="<%= task.task %>" style="display: none;">
+                    </div>
+                    <div class="task-actions">
+                        <div>
+                            <button class="edit-button">Edit</button>
+                            <button class="save-button" style="display: none;">Save</button>
+                        </div>
+                        <div>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service</p>
+    </div>
+    <script src="/assets/app.js"></script>
+</body>
+
+</html>
